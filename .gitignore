@@ -1,0 +1,2 @@
+node_modules/
+# it means we are ignoring all files which are under node_modules
