@@ -5,6 +5,7 @@ const db=require('./db.js'); //help for connecting between Node.js and MongoDb
 
 const person=require('./models/person.js'); //help for building schema
 const menu=require('./models/menu.js'); // helped for building Menu Schema
+require("dotenv").config();
 
 const bodyParser=require('body-parser'); //help for ectracting data in specific format,so we can process it. All data gets stored at req.body
 app.use(bodyParser.json());
@@ -30,7 +31,9 @@ app.use('/person',PersonRouter)  //as we have extracted, now we have written thi
 const MenuRouter=require("./Routes/menurRoutes.js");
 app.use('/menu',MenuRouter);
 
+const PORT= process.env.PORT || 3000;
+
 // adding commnent after saving first version
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('Server running on Port: 3000')
 })
